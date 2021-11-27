@@ -112,7 +112,8 @@ public class Vector2D
 
     public void normalize()
     {
-        final var magnitude = this.getMagnitude();
+        final float magnitude;
+        magnitude = this.getMagnitude();
         if ((double)(magnitude) > 9.99999974737875E-06)
         {
             set(getX() / magnitude, getY() / magnitude);
@@ -133,7 +134,7 @@ public class Vector2D
     @Override
     public String toString()
     {
-        return "(" + x + ", " + y + "}";
+        return "(" + x + ", " + y + ")";
     }
 
     // STATIC METHODS
@@ -190,8 +191,10 @@ public class Vector2D
 
     public static float distance(final Vector2D a, final Vector2D b)
     {
-        final var delta_x = (double)(b.getX()) - (double)(a.getX());
-        final var delta_y = (double)(b.getY()) - (double)(a.getY());
+        final double delta_x;
+        delta_x = (double)(b.getX()) - (double)(a.getX());
+        final double delta_y;
+        delta_y = (double)(b.getY()) - (double)(a.getY());
 
         return (float)(Math.sqrt(delta_x * delta_x + delta_y * delta_y));
     }
